@@ -1,15 +1,10 @@
 // FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
   const inspect = require('util').inspect;
-  if (actual === undefined) {
+  if ((actual === undefined) || (actual.length !== expected.length))  {
     console.log(`🛑🛑🛑 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
     return false;
   }
-  if (actual.length !== expected.length) {
-    console.log(`🛑🛑🛑 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
-    return false;
-  }
-
   for (let i = 0; i < actual.length; i++) {
     if (actual[i] !== expected[i]) {
       console.log(`🛑🛑🛑 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
