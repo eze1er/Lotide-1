@@ -18,7 +18,7 @@ const assertEqual = function(actual, expected) {
   console.log(`✅✅✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
   return true;
 };
-// TEST CODE
+
 const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
     return false;
