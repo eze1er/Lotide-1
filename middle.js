@@ -1,36 +1,7 @@
 
-const eqArrays = function(array1, array2) {
-  if (array1.length !== array2.length) {
-    return false;
-  }
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+const eqArrays = require('./eqArrays');
 
-const assertArraysEqual = function(array1, array2) {
-  const inspect = require('util').inspect;
-  if ((array1 === undefined) && (array2 === undefined)) {
-    console.log(`✅✅✅ Assertion Passed: ${inspect(array1)} === ${inspect(array2)}`);
-    return true;
-  }
-  // console.log(array1, array2);
-  if (array1.length !== array2.length) {
-    console.log(`🛑🛑🛑 Assertion Failed: ${inspect(array1)} !== ${inspect(array2)}`);
-    return false;
-  }
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i]) {
-      console.log(`🛑🛑🛑 Assertion Failed: ${inspect(array1)} !== ${inspect(array2)}`);
-      return false;
-    }
-  }
-  console.log(`✅✅✅ Assertion Passed: ${inspect(array1)} === ${inspect(array2)}`);
-  return true;
-};
+const assertArraysEqual = require('./assertArraysEqual');
 
 const middle = function(array) {
   //check short array
@@ -47,19 +18,5 @@ const middle = function(array) {
   return newArray;
 };
 
-// TEST CODE
+module.exports = middle;
 
-middle([1, 2, 3, 4]); // => [2, 3]
-middle([1, 2, 3, 4, 5, 6]); // => [3, 4]
-
-eqArrays(middle([1, 2, 3]), [ 2]); // => should PASS
-eqArrays(middle([1, 2, 3, 4, 5, 7]), [3, 4]); // => true
-eqArrays(middle([1, 2, 3, 7, 9, 4, 12, 5]), [7, 9]); // => false
-
-assertArraysEqual(middle([1, 2, 3]), [2]); // => should PASS
-assertArraysEqual(middle([1, 2, 3, 7, 9, 11]), [3, 7]); // => true
-assertArraysEqual(middle([7, 8, 9, 5, 2, 3]), [9, 5]); // => false
-
-assertArraysEqual(middle(["1", "2"]), []); // => true
-assertArraysEqual(middle([]), []); // => false
-assertArraysEqual(middle(["1"]), []); // => false
