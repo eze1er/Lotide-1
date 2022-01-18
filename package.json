@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@eze1er/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project was created and published as part of my learnings at Lighthouse Labs.",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/eze1er/Lotide-1.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ezechiel Itimbien",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/eze1er/Lotide-1/issues"
@@ -23,5 +23,8 @@
   "devDependencies": {
     "chai": "^4.3.4",
     "mocha": "^9.1.4"
+  },
+  "dependencies": {
+    "my-package": "^0.0.0"
   }
 }
